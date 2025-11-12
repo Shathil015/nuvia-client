@@ -13,7 +13,7 @@ const LatestCart = ({ art }) => {
         <p>Artist Name : {name}</p>
         <p>Category : {category}</p>
         <div className="card-actions">
-          <Link to={`/cartDetails/:id`} className="btn btn-primary">
+          <Link to={`/artDetails/${_id}`} className="btn btn-primary">
             View Details
           </Link>
         </div>

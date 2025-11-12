@@ -3,7 +3,7 @@ import LatestCart from "./LatetestCart";
 
 const LatestArtCollection = ({ latestArtPromise }) => {
   const artWorks = use(latestArtPromise);
-  console.log(artWorks);
+  //   console.log(artWorks);
   return (
     <div className="text-center">
       <h2 className="text-5xl font-bold mt-10 "> Latest Creations</h2>

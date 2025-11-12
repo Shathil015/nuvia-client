@@ -1,9 +1,21 @@
-import React from "react";
+import React, { use } from "react";
 import logo from "../assets/logo.png";
 import { Link, NavLink } from "react-router";
 import Users from "../assets/user.png";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = use(AuthContext);
+  const handleLogOut = () => {
+    // console.log("Trying to log out");
+    logOut()
+      .then(() => {
+        alert("LogOut Successfully");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   const links = (
     <>
       <li>
@@ -59,9 +71,17 @@ const Header = () => {
           </ul>
         </div>
         <img src={Users} />
-        <Link to="/auth/login" className="btn ml-5">
-          Login
-        </Link>
+        {user ? (
+          <button onClick={handleLogOut} className="btn ml-5">
+            LogOut
+          </button>
+        ) : (
+          <Link to="/auth/login" className="btn ml-5">
+            Login
+          </Link>
+        )}
+
+        <p>{user && user.email}</p>
       </div>
     </div>
   );
