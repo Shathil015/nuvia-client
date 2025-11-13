@@ -6,6 +6,8 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AuthLayout from "../ layout/AuthLayout";
 import ArtWorks from "../pages/ArtWorks";
+import PrivateRoute from "../Provider/PrivateRoute";
+import MyGallery from "../pages/MyGallery";
 
 const Router = createBrowserRouter([
   {
@@ -30,14 +32,19 @@ const Router = createBrowserRouter([
         path: "/auth/register",
         element: <Register></Register>,
       },
+      {
+        path: "/auth/artDetails/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/products/${params.id}`),
+        element: (
+          <PrivateRoute>
+            <ArtDetails></ArtDetails>
+          </PrivateRoute>
+        ),
+      },
     ],
   },
-  {
-    path: "/artDetails/:id",
-    loader: ({ params }) =>
-      fetch(`http://localhost:3000/products/${params.id}`),
-    element: <ArtDetails></ArtDetails>,
-  },
+
   {
     path: "/artworks",
     element: <ArtWorks></ArtWorks>,
@@ -48,7 +55,7 @@ const Router = createBrowserRouter([
   },
   {
     path: "/gallery",
-    element: <h2>Gallery is Hare</h2>,
+    element: <MyGallery></MyGallery>,
   },
   {
     path: "/favorites",

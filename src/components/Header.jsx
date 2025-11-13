@@ -33,6 +33,19 @@ const Header = () => {
       <li>
         <NavLink to="/favorites">My Favorites</NavLink>
       </li>
+      {/* {user && (
+        <>
+          <li>
+            <NavLink to="/addArtwork">Add Artwork</NavLink>
+          </li>
+          <li>
+            <NavLink to="/gallery">My Gallery</NavLink>
+          </li>
+          <li>
+            <NavLink to="/favorites">My Favorites</NavLink>
+          </li>
+        </>
+      )} */}
     </>
   );
 

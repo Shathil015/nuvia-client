@@ -1,30 +1,36 @@
 import React from "react";
-import image1 from "../assets/4.jpg";
-import image2 from "../assets/2.jpg";
-import image3 from "../assets/3.jpg";
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
 
 const Banner = () => {
+  const images = [
+    {
+      original: "https://i.postimg.cc/Hxq3Q7M2/Banner-3.jpg",
+    },
+    {
+      original: "https://i.postimg.cc/xd7P2bt4/Banner1.jpg",
+    },
+    {
+      original: "https://i.postimg.cc/hGw0B72J/Banner2.jpg",
+    },
+  ];
   return (
-    <div className="bg-base-200 flex flex-row max-h-auto mx-auto mt-10 relative">
-      <div className=" mx-10 mt-60">
-        <h1 className="text-5xl font-bold">
-          Discover, Bid, and Collect Art from Around the World
-        </h1>
-        <p className="py-6">
-          Unlock a world of imagination with our curated collection of original
-          artworks.
-        </p>
-        <button className="btn btn-primary">Explore Auctions</button>
-      </div>
-      <div className="flex my-10 mr-10 gap-10">
-        <div className="flex flex-col gap-5">
-          <img src={image2} className=" max-w-75 rounded-lg shadow-2xl" />
-          <img src={image3} className=" max-w-75 rounded-lg shadow-2xl" />
-        </div>
-        <div>
-          <img src={image1} className="max-w-155 rounded-lg shadow-2xl" />
-        </div>
-      </div>
+    <div>
+      <h2>Banner is hare </h2>
+      <ImageGallery
+        items={images}
+        useBrowserFullscreen={true}
+        showBullets={true}
+        autoPlay={true}
+        showNav={false}
+        showThumbnails={false}
+        showPlayButton={false}
+        slideDuration={4000}
+        // slideInterval={5000}
+        flickThreshold={1}
+        showFullscreenButton={true}
+      />
+      ;
     </div>
   );
 };

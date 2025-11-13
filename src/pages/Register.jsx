@@ -3,7 +3,10 @@ import { Link } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Register = () => {
-  const { signInWithGoogle, createUser, setUser } = use(AuthContext);
+  // const [nameError, setNameError] = useState("");
+
+  const { signInWithGoogle, createUser, setUser, updateUser } =
+    use(AuthContext);
 
   const handleGoogleSignIn = () => {
     signInWithGoogle()
@@ -45,8 +48,28 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
+
+        updateUser({ displayName: name, photoURL: photo })
+          .then(() => {
+            const newUser = { name, email, image: photo };
+
+            fetch("http://localhost:3000/users", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(newUser),
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                console.log("User added to database:", data);
+              });
+
+            setUser({ ...user, displayName: name, photoURL: photo });
+          })
+          .catch((error) => {
+            console.log(error);
+            setUser(user);
+          });
         // console.log(user);
-        setUser(user);
       })
       .catch((error) => {
         const errorMassage = error.message;

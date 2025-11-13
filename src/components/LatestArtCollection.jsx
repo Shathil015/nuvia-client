@@ -11,7 +11,7 @@ const LatestArtCollection = ({ latestArtPromise }) => {
         Discover the latest creations from talented artists around the world.
         Explore their unique styles and stories through each masterpiece.
       </p>
-      <div className="w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+      <div className="w-8/12 items-center mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center ">
         {artWorks.map((art) => (
           <LatestCart key={art._id} art={art}></LatestCart>
         ))}
