@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCyMQO26B1JIMmx6RxuzK8iMfb-eW5L27s",
-  authDomain: "nuvia-art.firebaseapp.com",
-  projectId: "nuvia-art",
-  storageBucket: "nuvia-art.firebasestorage.app",
-  messagingSenderId: "246091723475",
-  appId: "1:246091723475:web:86c7d2f333df6d64c8da26",
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase
