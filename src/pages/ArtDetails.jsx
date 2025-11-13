@@ -53,12 +53,12 @@ const ArtDetails = () => {
   const {
     photoURL,
     title,
-    name,
     category,
     created_at,
     price_min,
     price_max,
     user_name,
+    description,
   } = product;
   return (
     <div className="w-9/12 mx-auto my-12">
@@ -89,6 +89,9 @@ const ArtDetails = () => {
               </p>
               <p className="px-4 py-2 bg-blue-100 rounded-xl text-blue-700 font-medium col-span-2">
                 Seller: {user_name}
+              </p>
+              <p className="px-4 py-2 bg-green-100 rounded-xl text-green-700 font-medium col-span-2">
+                Description : {description}
               </p>
             </div>
           </div>
