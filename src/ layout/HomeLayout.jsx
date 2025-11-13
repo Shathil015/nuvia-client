@@ -2,6 +2,8 @@ import React from "react";
 import { Outlet } from "react-router";
 import Header from "../components/Header";
 import Home from "../pages/Home";
+import Footer from "../components/Footer";
+import TopArtist from "../components/TopArtist";
 
 const HomeLayout = () => {
   return (
@@ -12,8 +14,12 @@ const HomeLayout = () => {
       <main>
         <section>
           <Home></Home>
+          <TopArtist></TopArtist>
         </section>
       </main>
+      <footer className="mt-10">
+        <Footer></Footer>
+      </footer>
     </div>
   );
 };

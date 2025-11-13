@@ -5,8 +5,11 @@ const LatestArtCollection = ({ latestArtPromise }) => {
   const artWorks = use(latestArtPromise);
   //   console.log(artWorks);
   return (
-    <div className="text-center">
-      <h2 className="text-5xl font-bold mt-10 "> Latest Creations</h2>
+    <div className="text-center pt-10">
+      <h2 className="text-4xl font-bold text-gray-900 mb-10 text-center underline decoration-pink-400 underline-offset-8">
+        {" "}
+        Latest Creations
+      </h2>
       <p className="text-xl text-primary my-5">
         Discover the latest creations from talented artists around the world.
         Explore their unique styles and stories through each masterpiece.

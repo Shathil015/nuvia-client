@@ -8,6 +8,8 @@ import AuthLayout from "../ layout/AuthLayout";
 import ArtWorks from "../pages/ArtWorks";
 import PrivateRoute from "../Provider/PrivateRoute";
 import MyGallery from "../pages/MyGallery";
+import AddArtWork from "../components/AddArtWork";
+import ErrorPage from "../components/ErrorPage";
 
 const Router = createBrowserRouter([
   {
@@ -51,11 +53,19 @@ const Router = createBrowserRouter([
   },
   {
     path: "/addArtwork",
-    element: <h2>Your Artworks add hare</h2>,
+    element: (
+      <PrivateRoute>
+        <AddArtWork></AddArtWork>
+      </PrivateRoute>
+    ),
   },
   {
     path: "/gallery",
-    element: <MyGallery></MyGallery>,
+    element: (
+      <PrivateRoute>
+        <MyGallery></MyGallery>
+      </PrivateRoute>
+    ),
   },
   {
     path: "/favorites",
@@ -64,7 +74,7 @@ const Router = createBrowserRouter([
 
   {
     path: "/*",
-    element: <h2>Error404</h2>,
+    element: <ErrorPage></ErrorPage>,
   },
 ]);
 
