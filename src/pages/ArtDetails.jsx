@@ -22,7 +22,7 @@ const ArtDetails = () => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
-    console.log(productId, name, email);
+    // console.log(productId, name, email);
     const newAdd = {
       product: productId,
       adder_name: name,

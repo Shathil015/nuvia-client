@@ -12,7 +12,7 @@ const MyGallery = () => {
       fetch(`https://nuvia-brand-server.onrender.com/gallery?=${user.email}`)
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           setMyADD(data);
         });
     }

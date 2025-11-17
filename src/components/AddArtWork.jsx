@@ -4,13 +4,13 @@ import Header from "./Header";
 const AddArtWork = () => {
   const handleAddArt = (e) => {
     e.preventDefault();
-    const photo = e.target.value;
-    const title = e.title.value;
-    const name = e.name.value;
-    const category = e.category.value;
-    const price_min = e.price_min.value;
-    const price_max = e.price_max.value;
-    console.log(photo, title, name, category, price_min, price_max);
+    // const photo = e.target.value;
+    // const title = e.title.value;
+    // const name = e.name.value;
+    // const category = e.category.value;
+    // const price_min = e.price_min.value;
+    // const price_max = e.price_max.value;
+    // console.log(photo, title, name, category, price_min, price_max);
   };
 
   return (
