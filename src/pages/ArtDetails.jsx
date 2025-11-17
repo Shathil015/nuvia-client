@@ -30,7 +30,7 @@ const ArtDetails = () => {
       status: "pending",
     };
 
-    fetch("http://localhost:3000/gallery", {
+    fetch("https://nuvia-brand-server.onrender.com/gallery", {
       method: "POST",
       headers: {
         "content-type": "application/json",

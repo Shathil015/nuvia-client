@@ -16,7 +16,7 @@ const Register = () => {
           image: result.user.photoURL,
         };
 
-        fetch("http://localhost:3000/users", {
+        fetch("https://nuvia-brand-server.onrender.com/users", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(newUser),
@@ -51,7 +51,7 @@ const Register = () => {
           .then(() => {
             const newUser = { name, email, image: photo };
 
-            fetch("http://localhost:3000/users", {
+            fetch("https://nuvia-brand-server.onrender.com/users", {
               method: "POST",
               headers: { "content-type": "application/json" },
               body: JSON.stringify(newUser),

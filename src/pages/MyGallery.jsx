@@ -9,7 +9,7 @@ const MyGallery = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/gallery?=${user.email}`)
+      fetch(`https://nuvia-brand-server.onrender.com/gallery?=${user.email}`)
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -29,7 +29,7 @@ const MyGallery = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/gallery/${_id}`, {
+        fetch(`https://nuvia-brand-server.onrender.com/gallery/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

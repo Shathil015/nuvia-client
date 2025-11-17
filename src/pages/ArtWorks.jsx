@@ -6,7 +6,7 @@ const Artworks = () => {
   const [artworks, setArtworks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/products")
+    fetch("https://nuvia-brand-server.onrender.com/products")
       .then((res) => res.json())
       .then((data) => setArtworks(data))
       .catch((err) => console.error(err));
@@ -26,7 +26,7 @@ const Artworks = () => {
     // Update backend
     const artToUpdate = updatedArtworks.find((art) => art._id === artId);
 
-    fetch(`http://localhost:3000/products/${artId}`, {
+    fetch(`https://nuvia-brand-server.onrender.com/products/${artId}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ likes: artToUpdate.likes }),

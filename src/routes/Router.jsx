@@ -37,7 +37,9 @@ const Router = createBrowserRouter([
       {
         path: "/auth/artDetails/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/products/${params.id}`),
+          fetch(
+            `https://nuvia-brand-server.onrender.com/products/${params.id}`
+          ),
         element: (
           <PrivateRoute>
             <ArtDetails></ArtDetails>
